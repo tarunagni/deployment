@@ -1,0 +1,24 @@
+pipeline {
+    agent { 
+        label 'node1'
+    }
+tools {
+  git 'Default'
+}
+    stages {
+        stage('code') {
+            steps {
+                // Fetch code from GitHub repository
+                // git 'https://github.com/tarunagni/deployment.git'
+                sh 'git clone -b dev https://github.com/tarunagni/deployment.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'chmod +x /home/3dexp/workspace/node1_deploy/deployment/install_apache.sh'
+                sh '/home/3dexp/workspace/node1_deploy/deployment/install_apache.sh >> /tmp/install_apache.log'
+            }
+        }
+           }
+       }
