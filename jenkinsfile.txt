@@ -9,7 +9,7 @@ tools {
         stage('code') {
             steps {
                 // Fetch code from GitHub repository
-                'git https://github.com/tarunagni/deployment.git'
+                git 'https://github.com/tarunagni/deployment.git'
             }
         }
         stage('Build') {
