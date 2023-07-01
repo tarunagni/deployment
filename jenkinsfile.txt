@@ -9,10 +9,9 @@ tools {
         stage('code') {
             steps {
                 // Fetch code from GitHub repository
-                'git clone -b dev https://github.com/tarunagni/deployment.git'
+                'git https://github.com/tarunagni/deployment.git'
             }
         }
-
         stage('Build') {
             steps {
                 sh 'chmod +x /home/3dexp/workspace/node1_deploy/deployment/install_apache.sh'
