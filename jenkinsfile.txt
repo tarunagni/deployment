@@ -3,7 +3,7 @@ pipeline {
         label 'Linux_agent'
     }
 tools {
-  git 'pu2vlinfratr01'
+  git 'Default'
 }
     stages {
         stage('code') {
