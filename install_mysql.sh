@@ -26,3 +26,6 @@ sudo systemctl enable mysqld
 
 # Check MySQL service status
 sudo systemctl status mysqld
+
+temp_pass=$(sudo cat /var/log/mysqld.log | grep -i note | awk '{print $13}')
+echo "Temporarroy password for mysql root user is $temp_pass"
